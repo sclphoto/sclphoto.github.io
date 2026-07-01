@@ -4,7 +4,7 @@ body {
 }
 a {
     color: #ffffff;
-    margin: 20px;
+    margin: 44px;
     display: inline-block;
     text-decoration: none;
     transition: all 0.2s ease;
@@ -17,4 +17,17 @@ nav {
 }
 a:hover {
     text-decoration: underline;
+}
+header {
+    text-align: center;
+    padding: 60px 20px 20px 20px;
+}
+h1 {
+    font-size: 48px;
+    margin: 0;
+}
+header p {
+    font-size: 14px;
+    opacity: 0.7;
+    margin-top: 10px;
 }
