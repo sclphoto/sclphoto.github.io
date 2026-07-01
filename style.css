@@ -1,5 +1,6 @@
 body {
     background-color: #d1c7c7;
+    font-family: Arial, sans-serif;
 }
 a {
     color: #ffffff;
@@ -7,9 +8,12 @@ a {
     display: inline-block;
     text-decoration: none;
     transition: all 0.2s ease;
+    font-size: 16px;
+    letter-spacing: 1px;
 }
 nav {
     text-align: center;
+    padding: 20px 0; 
 }
 a:hover {
     text-decoration: underline;
