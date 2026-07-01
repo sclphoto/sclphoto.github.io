@@ -5,4 +5,8 @@ a {
     color: #ffffff;
     margin: 20px;
     display: inline-block;
+    text-decoration: none;
+}
+nav {
+    text-align: center;
 }
