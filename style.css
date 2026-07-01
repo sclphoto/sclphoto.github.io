@@ -6,7 +6,11 @@ a {
     margin: 20px;
     display: inline-block;
     text-decoration: none;
+    transition: all 0.2s ease;
 }
 nav {
     text-align: center;
+}
+a:hover {
+    text-decoration: underline;
 }
