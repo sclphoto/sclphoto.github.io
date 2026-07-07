@@ -1,16 +1,28 @@
 const lightbox = document.querySelector(".lightbox");
 const galleryImages = document.querySelectorAll(".gallery img");
 const popupImage = document.querySelector(".lightbox img");
-const thumbnails = document.querySelector(".thumbnails");
+const thumbnailContainer = document.querySelector(".thumbnails");
 
 const closeButton = document.querySelector(".close");
 const prevButton = document.querySelector(".prev");
 const nextButton = document.querySelector(".next");
 
 let currentIndex = 0;
+let thumbnailImages = [];
 
 function showImage() {
-        popupImage.src = galleryImages[currentIndex].src;}
+
+    popupImage.src = galleryImages[currentIndex].src;
+
+    thumbnailImages[currentIndex].scrollIntoView({
+        behavior: "smooth",
+        inline: "center"
+    });
+    thumbnailImages.forEach(function(thumb) {
+    thumb.classList.remove("active");
+    });
+    thumbnailImages[currentIndex].classList.add("active");
+}
 
 galleryImages.forEach(function(image, index) {
 
@@ -22,12 +34,14 @@ galleryImages.forEach(function(image, index) {
     
     const thumb = document.createElement("img");
     thumb.src = image.src;
-    thumbnails.appendChild(thumb);
+    thumbnailContainer.appendChild(thumb);
+    thumbnailImages.push(thumb);
 
     thumb.addEventListener("click", function() {
         currentIndex = index;
         showImage();
     });
+
 });
 closeButton.addEventListener("click", function() {
         lightbox.style.display = "none";

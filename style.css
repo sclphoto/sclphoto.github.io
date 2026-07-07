@@ -55,10 +55,9 @@ header p {
 
 }
 .lightbox img {
-    max-width: 90%;
-    max-height: 90%;
+    max-width: 85%;
+    max-height: 75vh;
 }
-
 .close {
     position: absolute;
     top: 20px;
@@ -85,8 +84,13 @@ header p {
     cursor: pointer;
 }
 .thumbnails {
-    max-width: 90%;
+    display: flex;
+    gap: 10px;
     overflow-x: auto;
+    max-width: 90%;
+}
+.thumbnails img.active {
+    border: 3px solid white;
 }
 .prev,
 .next {
