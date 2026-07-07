@@ -77,12 +77,16 @@ header p {
     display: flex;
     gap: 10px;
 
-    overflow-x: hidden;
+    overflow-x: auto;
     overflow-y: hidden;
     max-width: 90%;
 
     scroll-behavior: smooth;
     white-space: nowrap;
+    scrollbar-width: none; /* Firefox */
+}
+.thumbnails::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
 }
 .thumbnails img {
     width: 80px;

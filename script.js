@@ -15,10 +15,13 @@ function centerThumbnail() {
 
     const selectedThumb = thumbnailImages[currentIndex];
 
-    const containerCenter = thumbnailContainer.clientWidth / 2;
     const thumbCenter = selectedThumb.offsetLeft + selectedThumb.clientWidth / 2;
+    const containerCenter = thumbnailContainer.clientWidth / 2;
 
-    thumbnailContainer.scrollLeft = thumbCenter - containerCenter;
+    thumbnailContainer.scrollTo({
+        left: thumbCenter - containerCenter,
+        behavior: "smooth"
+    });
 }
 
 function showImage() {
