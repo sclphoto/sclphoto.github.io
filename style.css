@@ -80,8 +80,7 @@ header p {
     overflow-x: auto;
     max-width: 90%;
 
-    padding-left: 50%;
-    padding-right: 50%;
+    scroll-behavior: smooth;
 }
 .thumbnails img {
     width: 80px;
@@ -89,9 +88,11 @@ header p {
     object-fit: cover;
     cursor: pointer;
     flex-shrink: 0;
+    transition: transform 0.2s;
 }
 .thumbnails img.active {
     border: 3px solid white;
+    transform: scale(1.1);
 }
 .prev,
 .next {
