@@ -65,8 +65,8 @@ header p {
     right: 30px;
     background: none;
     border: none;
-    color: white;
-    font-size: 40px;
+    color: rgb(193, 193, 193);
+    font-size: 15px;
     cursor: pointer;
 }
 .thumbnails {
@@ -87,4 +87,27 @@ header p {
 .thumbnails {
     max-width: 90%;
     overflow-x: auto;
+}
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    background: none;
+    border: none;
+    color: white;
+
+    font-size: 50px;
+    cursor: pointer;
+
+    padding: 20px;
+}
+
+.prev {
+    left: 30px;
+}
+
+.next {
+    right: 30px;
 }
