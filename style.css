@@ -78,9 +78,11 @@ header p {
     gap: 10px;
 
     overflow-x: auto;
+    overflow-y: hidden;
     max-width: 90%;
 
     scroll-behavior: smooth;
+    white-space: nowrap;
 }
 .thumbnails img {
     width: 80px;
@@ -92,7 +94,7 @@ header p {
 }
 .thumbnails img.active {
     border: 3px solid white;
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 .prev,
 .next {
