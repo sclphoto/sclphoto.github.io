@@ -5,9 +5,9 @@ const popupImage = document.querySelector(".lightbox img");
 galleryImages.forEach(function(image) {
 
     image.addEventListener("click", function() {
-        lightbox.style.display = "block";
+        lightbox.style.display = "flex";
         popupImage.src = this.src;
-             
+
     });
 
 });
