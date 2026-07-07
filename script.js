@@ -3,9 +3,10 @@ const galleryImages = document.querySelectorAll(".gallery img");
 const popupImage = document.querySelector(".lightbox img");
 const thumbnailContainer = document.querySelector(".thumbnails");
 
-const closeButton = document.querySelector(".close");
+
 const prevButton = document.querySelector(".prev");
 const nextButton = document.querySelector(".next");
+const closeButton = document.querySelector(".close");
 
 let currentIndex = 0;
 let thumbnailImages = [];
