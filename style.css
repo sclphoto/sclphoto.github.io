@@ -31,3 +31,9 @@ header p {
     opacity: 0.7;
     margin-top: 10px;
 }
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
