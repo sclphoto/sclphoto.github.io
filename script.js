@@ -14,12 +14,14 @@ function showImage() {
 
     popupImage.src = galleryImages[currentIndex].src;
 
-    thumbnailImages[currentIndex].scrollIntoView({
-        behavior: "smooth",
-        inline: "center"
+    const selectedThumb = thumbnailImages[currentIndex];
+
+    thumbnailContainer.scrollTo({
+        left: selectedThumb.offsetLeft - thumbnailContainer.clientWidth / 2 + selectedThumb.clientWidth / 2,
+        behavior: "smooth"
     });
     thumbnailImages.forEach(function(thumb) {
-    thumb.classList.remove("active");
+        thumb.classList.remove("active");
     });
     thumbnailImages[currentIndex].classList.add("active");
 }
