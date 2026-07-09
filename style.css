@@ -93,12 +93,15 @@ header p {
     height: 60px;
     object-fit: cover;
     cursor: pointer;
-    flex-shrink: 0;
-    transition: transform 0.2s;
+    border-radius: 8px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
 }
 .thumbnails img.active {
     border: 3px solid white;
     transform: scale(1.1);
+}
+.thumbnails img:hover {
+    transform: scale(1.08);
 }
 .prev,
 .next {
