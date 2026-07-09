@@ -2,7 +2,9 @@ const lightbox = document.querySelector(".lightbox");
 const galleryImages = document.querySelectorAll(".gallery img");
 const popupImage = document.querySelector(".lightbox img");
 const thumbnailContainer = document.querySelector(".thumbnails");
-
+const caption = document.querySelector(".caption");
+const captions = [   
+];
 
 const prevButton = document.querySelector(".prev");
 const nextButton = document.querySelector(".next");
@@ -54,6 +56,7 @@ function showImage() {
 
     setTimeout(function() {
         popupImage.src = galleryImages[currentIndex].src;
+        caption.textContent = captions[currentIndex];
         popupImage.style.opacity = 1;
     }, 250);
 
