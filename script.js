@@ -11,45 +11,43 @@ const closeButton = document.querySelector(".close");
 let currentIndex = 0;
 let thumbnailImages = [];
 
-function centerThumbnail() {
 
-    const selectedThumb = thumbnailImages[currentIndex];
-
-    const thumbCenter = selectedThumb.offsetLeft + selectedThumb.clientWidth / 2;
-    const containerCenter = thumbnailContainer.clientWidth / 2;
-
-    thumbnailContainer.scrollTo({
-        left: thumbCenter - containerCenter,
-        behavior: "smooth"
-    });
-}
 
 function showImage() {
 
     popupImage.src = galleryImages[currentIndex].src;
 
-    thumbnailImages.forEach(function(thumb) {
-        thumb.classList.remove("active");
-    });
+    thumbnailContainer.innerHTML = "";
+    thumbnailImages = [];
 
-    thumbnailImages[currentIndex].classList.add("active");
-    centerThumbnail();
+    const visible = 7;
+    const middle = Math.floor(visible / 2);
+
+    for (let i = -middle; i <= middle; i++) {
+
+        let index = (currentIndex + i + galleryImages.length) % galleryImages.length;
+
+        const thumb = document.createElement("img");
+        thumb.src = galleryImages[index].src;
+
+        if (index === currentIndex) {
+            thumb.classList.add("active");
+        }
+
+        thumb.addEventListener("click", function () {
+            currentIndex = index;
+            showImage();
+        });
+
+        thumbnailContainer.appendChild(thumb);
+        thumbnailImages.push(thumb);
+    }
 }
 
 galleryImages.forEach(function(image, index) {
 
     image.addEventListener("click", function() {
         lightbox.style.display = "flex";
-        currentIndex = index;
-        showImage();
-    });
-    
-    const thumb = document.createElement("img");
-    thumb.src = image.src;
-    thumbnailContainer.appendChild(thumb);
-    thumbnailImages.push(thumb);
-
-    thumb.addEventListener("click", function() {
         currentIndex = index;
         showImage();
     });
