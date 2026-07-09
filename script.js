@@ -13,37 +13,58 @@ let thumbnailImages = [];
 
 
 
+// function showImage() {
+
+//     popupImage.style.opacity = "0";
+
+//     setTimeout(() => {
+//         popupImage.src = galleryImages[currentIndex].src;
+//         popupImage.style.opacity = "1";
+//     }, 200);
+
+//     thumbnailContainer.innerHTML = "";
+//     thumbnailImages = [];
+
+//     const visible = 7;
+//     const middle = Math.floor(visible / 2);
+
+//     for (let i = -middle; i <= middle; i++) {
+
+//         let index = (currentIndex + i + galleryImages.length) % galleryImages.length;
+
+//         const thumb = document.createElement("img");
+//         thumb.src = galleryImages[index].src;
+
+//         if (index === currentIndex) {
+//             thumb.classList.add("active");
+//         }
+
+//         thumb.addEventListener("click", function () {
+//             currentIndex = index;
+//             showImage();
+//         });
+
+//         thumbnailContainer.appendChild(thumb);
+//         thumbnailImages.push(thumb);
+//     }
+// }
 function showImage() {
 
-    popupImage.src = galleryImages[currentIndex].src;
+    popupImage.style.opacity = 0;
 
-    thumbnailContainer.innerHTML = "";
-    thumbnailImages = [];
+    setTimeout(function() {
+        popupImage.src = galleryImages[currentIndex].src;
+        popupImage.style.opacity = 1;
+    }, 250);
 
-    const visible = 7;
-    const middle = Math.floor(visible / 2);
+    thumbnailImages.forEach(function(thumb) {
+        thumb.classList.remove("active");
+    });
 
-    for (let i = -middle; i <= middle; i++) {
+    thumbnailImages[currentIndex].classList.add("active");
 
-        let index = (currentIndex + i + galleryImages.length) % galleryImages.length;
-
-        const thumb = document.createElement("img");
-        thumb.src = galleryImages[index].src;
-
-        if (index === currentIndex) {
-            thumb.classList.add("active");
-        }
-
-        thumb.addEventListener("click", function () {
-            currentIndex = index;
-            showImage();
-        });
-
-        thumbnailContainer.appendChild(thumb);
-        thumbnailImages.push(thumb);
-    }
+    centerThumbnail();
 }
-
 galleryImages.forEach(function(image, index) {
 
     image.addEventListener("click", function() {

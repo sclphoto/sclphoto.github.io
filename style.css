@@ -57,6 +57,7 @@ header p {
 .lightbox img {
     max-width: 85%;
     max-height: 75vh;
+    transition: opacity 0.2s ease;
 }
 .close {
     position: absolute;
@@ -125,4 +126,17 @@ header p {
 
 .next {
     right: 30px;
+}
+.lightbox img,
+.gallery img,
+.thumbnails img {
+    user-select: none;
+    -webkit-user-drag: none;
+}
+.gallery img {
+    transition: transform 0.25s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.03);
 }
